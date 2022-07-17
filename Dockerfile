@@ -5,7 +5,7 @@ WORKDIR /app
 RUN apk update && \
 	apk add --no-cache ca-certificates git && \
 	update-ca-certificates && \
-	git clone --depth 1 https://github.com/excalidraw/excalidraw.git . && \
+	git clone --depth 1 https://github.com/DDSRem/excalidraw.git . && \
 	yarn set version berry && \
 	yarn install && \
 	yarn up -R eslint postcss react-scripts && \
@@ -13,7 +13,7 @@ RUN apk update && \
 
 COPY . .
 
-
+RUN yarn build:app:docker
 
 FROM ddsderek/foundations:Alpine3.16.0-nginx1.22
 
