@@ -19,6 +19,7 @@ FROM ddsderek/foundations:Alpine3.16.0-nginx1.22
 COPY --from=build /app/build /app/web
 COPY ./start.sh /
 
-RUN mv /app/web /opt/web
+RUN mv /app/web /opt/web && \
+    chmod +x /start.sh
 
 ENTRYPOINT [ "/start.sh" ]
