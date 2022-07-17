@@ -17,7 +17,7 @@ RUN yarn build:app:docker
 FROM ddsderek/foundations:Alpine3.16.0-nginx1.22
 
 COPY --from=build /app/build /app/web
-COPY start.sh /
+COPY ./start.sh /
 
 RUN mv /app/web /opt/web
 
