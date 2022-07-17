@@ -11,9 +11,6 @@ RUN apk update && \
 	yarn up -R eslint postcss react-scripts && \
 	npx browserslist@latest --update-db
 
-COPY . .
-RUN yarn build:app:docker
-
 FROM ddsderek/foundations:Alpine3.16.0-nginx1.22
 
 COPY --from=build /app/build /app/web
