@@ -5,7 +5,7 @@ WORKDIR /app
 RUN apk update && \
 	apk add --no-cache ca-certificates git && \
 	update-ca-certificates && \
-	git clone --depth 1 https://github.com/DDSRem/excalidraw.git . && \
+	git clone --depth 1 https://git.ddsrem.gq/DDSRem/excalidraw-v0.12.0.git . && \
 	yarn set version berry && \
 	yarn install && \
 	yarn up -R eslint postcss react-scripts && \
