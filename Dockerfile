@@ -21,9 +21,5 @@ COPY --from=build /app/build /app/web
 
 ADD ./shell /shell
 
-<<<<<<< Updated upstream
 RUN mv /app/web /opt/web && \
     chmod -R 755 /shell
-=======
-RUN chmod -R 755 /shell
->>>>>>> Stashed changes
